@@ -1,0 +1,29 @@
+:root{
+    --redColor:"#a94442";
+}
+
+
+.add-form,.edit-form,.closeBtn{
+    display: none;
+}
+
+.hidden-edit-btn,.hidden-dlt-btn{
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    color:#a94442;
+    border: 2px #a94442 solid;
+    border-radius: 5px;
+    z-index: 100;
+
+}
+.hidden-edit-btn-hide,.hideen-dlt-btn-hide{
+    display: none;
+}
+.hidden-edit-btn:hover,.hidden-dlt-btn:hover{
+    background-color:#a94442;
+    color:white;
+    cursor:pointer;
+
+}
+
