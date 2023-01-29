@@ -96,9 +96,9 @@
                             <img src="{{ !empty($button->img) ? Storage::url($button->img) : asset('assets/images/icon.png') }}"
                                 style="width:30px; height:30px">
                             <span>{{ $button->action_name }}</span>
-                            <i class="material-icons position: absolute; hidden-edit-btn hidden-edit-btn-hide"
+                            <i class="material-icons hidden-edit-btn hidden-edit-btn-hide"
                                 id="{{ $button->id }}">edit</i>
-                            <i class="material-icons position: absolute; hidden-dlt-btn hideen-dlt-btn-hide"
+                            <i class="material-icons hidden-dlt-btn hideen-dlt-btn-hide"
                                 id="{{ $button->id }}">delete</i>
                         </button>
                     @endforeach
@@ -113,13 +113,13 @@
             <script>
                 var Url = '{{ route('action.open') }}';
                 var deleteUrl = '{{ route('action.delete') }}';
+                var editUrl = "{{ route('action.edit') }}";
             </script>
             <script src="{{ asset('assets/js/buttons/open.js') }}"></script>
 
-            @if ($errors->count()>0)
-
+            @if ($errors->count() > 0)
                 <script>
-                    $(document).ready(function(){
+                    $(document).ready(function() {
                         $(".addBtn").click();
 
                     })

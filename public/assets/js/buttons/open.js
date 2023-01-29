@@ -93,11 +93,32 @@ $(document).ready(function () {
 
     });
 
+
+    // Edit button
+    $(".open").on('click', '.hidden-edit-btn', function () {
+        ajaxHeader();
+        var id = $(this).attr('id');
+        $.ajax({
+            type: 'post',
+            url: editUrl,
+            data: { 'id': id },
+            success: function (res) {
+                $('#editForm').html("");
+                $('#editForm').html(res.html);
+                $("#collapseThree_2").collapse("show");
+                $("#editForm").removeClass('edit-form');
+                $("#addForm").addClass('add-form');
+            }
+
+        });
+
+    });
     //--------action button end-----//
 
 
     //--------collaspse------------//
     $(".addBtn").click(function () {
+        $("#editForm").addClass('edit-form');
         $("#addForm").removeClass('add-form');
         $("#collapseThree_2").collapse("toggle");
         // $("#clsBtn").removeClass('closeBtn');
@@ -112,18 +133,6 @@ $(document).ready(function () {
 
     })
 
-    //-------end collaspse------//
-
-    //Add Button click
-
-
-    // $(".editBtn").click(function () {
-    //     $("#collapseThree_2").collapse("show")
-    //     $("#addForm").addClass('add-form');
-    //     $("#clsBtn").removeClass('closeBtn');
-    //     $("#editForm").removeClass('edit-form');
-
-    // })
 
 
 })
