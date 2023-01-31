@@ -11,8 +11,9 @@ class ActionController extends Controller
 {
     public function index()
     {
+        $active='home';
         $action_buttons = ActionButton::all();
-        return view('dashboard.index', compact('action_buttons'));
+        return view('dashboard.index', compact('action_buttons','active'));
     }
     public function add(Request $request)
     {

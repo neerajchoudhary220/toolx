@@ -4,13 +4,14 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="{{asset('assets/images/user.png')}}" width="48" height="48" alt="User" />
+                <img src="{{ asset('assets/images/user.png') }}" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                 <div class="email">john.doe@example.com</div>
                 <div class="btn-group user-helper-dropdown">
-                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
                         <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                         <li role="seperator" class="divider"></li>
@@ -28,16 +29,20 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="index.html">
+                <li @class([
+                    'active' => $active=='home',
+                ])>
+                    <a href="{{route('home')}}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
                 </li>
-                <li>
-                    <a href="pages/typography.html">
-                        <i class="material-icons">text_fields</i>
-                        <span>Typography</span>
+                <li @class([
+                    'active' => $active=='db',
+                ])>
+                    <a href="{{route('db')}}">
+                        <i class="material-icons">storage</i>
+                        <span>DB</span>
                     </a>
                 </li>
                 <li>
